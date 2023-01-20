@@ -2,29 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import { BrowserRouter } from 'react-router-dom';
 import { NotifyContextProvider } from './store/notify-context';
-import { ErrorBoundary } from 'react-error-boundary';
-
-const ErrorFallback = ({ error, resetErrorBoundary }) => {
-  return (
-    <div role="alert">
-      <p>Something went wrong:</p>
-      <pre>{error.message}</pre>
-      <button onClick={resetErrorBoundary}>Try again</button>
-    </div>
-  );
-};
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
     <React.StrictMode>
-      <ErrorBoundary FallbackComponent={ErrorFallback}>
         <NotifyContextProvider>
           <App />
         </NotifyContextProvider>
-      </ErrorBoundary>
     </React.StrictMode>
   </BrowserRouter>
 );
