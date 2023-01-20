@@ -3,6 +3,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.font-style {
+  @apply text-text-400 font-body;
+}
+
 .link {
   @apply flex rounded-lg py-2 justify-center hover:bg-gradient-to-r from-primary-200 to-secondary hover:text-white font-medium;
 }

@@ -3,7 +3,7 @@ import SignInMessage from './SIgnInMessage';
 
 const SignIn = () => {
   return (
-    <section className="flex h-screen">
+    <section className="font-style flex min-h-screen">
       <SiginInForm />
       <SignInMessage />
     </section>
