@@ -19,7 +19,6 @@ function SignInForm() {
     hasError: nameInputHasError,
     valueChangeHandler: nameChangeHandler,
     inputBlurHandler: nameBlurHandler,
-    // reset: resetNameInput,
   } = useInput(isNotEmpty);
 
   const {
@@ -28,7 +27,6 @@ function SignInForm() {
     hasError: passwordInputHasError,
     valueChangeHandler: passwordChangeHandler,
     inputBlurHandler: passwordBlurHandler,
-    // reset: resetPasswordInput,
   } = useInput(validPassword);
 
   const checkedChangeHandler = e => {
@@ -43,41 +41,34 @@ function SignInForm() {
     formIsValid = true;
   }
 
-  //   const navigate = useNavigate();
-
   const viewPasswordHandler = () => {
     setView(!view);
   };
 
-  //   const submitHandler = e => {
-  //     e.preventDefault();
-
-  //     if (!formIsValid) return;
-
-  //     navigate('/home/dashboard');
-
-  //     resetNameInput();
-  //     resetPasswordInput();
-  //   };
-
   return (
-    <div>
-      <img src={logo} alt="logo" />
-      <div>
-        <Link to="/">
-          <img src={google} alt="google" />
-          Sign in with Google
-        </Link>
+    <div className="px-12 py-8">
+      <img src={logo} alt="logo" className="mb-16" />
+      <Link
+        to="/"
+        className="link border border-primary-200 text-primary-200 gap-2 mb-16"
+      >
+        <img src={google} alt="google" className="w-6" />
+        Sign in with Google
+      </Link>
+      <div className="flex gap-5 flex-1 text-text-300 text-lg mb-8">
+        <hr className="grow border-t border-shade" />
+        OR
+        <hr className="grow border-t border-shade" />
+      </div>
+      <form>
         <div>
-          <hr />
-          OR
-          <hr />
-        </div>
-        <form>
-          <label htmlFor="name">
-            Full Name <span>*</span>
-            {nameInputHasError && <p>Name cannot be blank</p>}
+          <label htmlFor="name" className="pb-4">
+            Full Name <span className="text-error">*</span>
+            {nameInputHasError && (
+              <p className="inline text-error text-xs">Name cannot be blank</p>
+            )}
             <input
+              className="input-box"
               type="text"
               id="name"
               value={enteredName}
@@ -87,12 +78,17 @@ function SignInForm() {
               required
             />
           </label>
+        </div>
+        <div>
           <label htmlFor="password">
-            Password <span>*</span>
+            Password <span className="text-error">*</span>
             {passwordInputHasError && (
-              <p>Password must be at least 7 characters long!</p>
+              <p className="inline text-error text-xs">
+                Password must be at least 7 characters long!
+              </p>
             )}
             <input
+              className="input-box"
               type={view ? 'text' : 'password'}
               id="password"
               value={enteredPassword}
@@ -102,19 +98,19 @@ function SignInForm() {
             />
             <img src={password} alt="" onClick={viewPasswordHandler} />
           </label>
-          <div>
-            <label htmlFor="">
-              <input type="checkbox" onChange={checkedChangeHandler} required />
-              <p>
-                I agree to the processing of my personal data (name and email)
-                for the purpose of conducting the assessment. Read{' '}
-                <Link to="/">Privacy Policy</Link> to know more.
-              </p>
-            </label>
-          </div>
-          <Link to={formIsValid ? '/home' : '/'}>Sign In</Link>
-        </form>
-      </div>
+        </div>
+        <div>
+          <label htmlFor="">
+            <input type="checkbox" onChange={checkedChangeHandler} required />
+            <p>
+              I agree to the processing of my personal data (name and email) for
+              the purpose of conducting the assessment. Read{' '}
+              <Link to="/">Privacy Policy</Link> to know more.
+            </p>
+          </label>
+        </div>
+        <Link to={formIsValid ? '/home' : '/'}>Sign In</Link>
+      </form>
     </div>
   );
 }

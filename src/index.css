@@ -1,7 +1,15 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap'); */
-/* @tailwind base;
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap');
+@tailwind base;
 @tailwind components;
-@tailwind utilities; */
+@tailwind utilities;
+
+.link {
+  @apply flex rounded-lg py-2 justify-center hover:bg-gradient-to-r from-primary-200 to-secondary hover:text-white;
+}
+
+.input-box {
+  @apply block border border-text-100 rounded-lg w-full outline-none py-2 pl-2 mt-2;
+}
 
 /* * {
   margin: 0;

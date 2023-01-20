@@ -33,7 +33,11 @@ const router = createBrowserRouter([
 ]);
 
 function Apps() {
-  return <RouterProvider router={router} />;
+  return (
+    <div className="text-text-400 font-body">
+      <RouterProvider router={router} />
+    </div>
+  );
 }
 
 export default Apps;
