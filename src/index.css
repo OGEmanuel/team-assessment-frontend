@@ -4,11 +4,19 @@
 @tailwind utilities;
 
 .link {
-  @apply flex rounded-lg py-2 justify-center hover:bg-gradient-to-r from-primary-200 to-secondary hover:text-white;
+  @apply flex rounded-lg py-2 justify-center hover:bg-gradient-to-r from-primary-200 to-secondary hover:text-white font-medium;
+}
+
+.hr-line {
+  @apply grow border-t border-shade mt-2;
 }
 
 .input-box {
-  @apply block border border-text-100 rounded-lg w-full outline-none py-2 pl-2 mt-2;
+  @apply block border border-text-100 rounded-lg w-full outline-none py-2 pl-2 mt-0.5;
+}
+
+.h2 {
+  @apply font-medium text-xl mb-2;
 }
 
 /* * {

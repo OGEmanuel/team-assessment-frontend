@@ -50,25 +50,25 @@ function SignInForm() {
       <img src={logo} alt="logo" className="mb-16" />
       <Link
         to="/"
-        className="link border border-primary-200 text-primary-200 gap-2 mb-16"
+        className="link border border-primary-200 text-primary-200 gap-2 mb-14"
       >
         <img src={google} alt="google" className="w-6" />
         Sign in with Google
       </Link>
       <div className="flex gap-5 flex-1 text-text-300 text-lg mb-8">
-        <hr className="grow border-t border-shade" />
+        <hr className="hr-line" />
         OR
-        <hr className="grow border-t border-shade" />
+        <hr className="hr-line" />
       </div>
       <form>
-        <div>
-          <label htmlFor="name" className="pb-4">
-            Full Name <span className="text-error">*</span>
+        <div className="mb-4">
+          <label htmlFor="name" className="font-medium">
+            Full Name <span className="text-error font-normal">*</span>
             {nameInputHasError && (
               <p className="inline text-error text-xs">Name cannot be blank</p>
             )}
             <input
-              className="input-box"
+              className="input-box placeholder-text-200 placeholder:font-normal font-normal"
               type="text"
               id="name"
               value={enteredName}
@@ -79,16 +79,16 @@ function SignInForm() {
             />
           </label>
         </div>
-        <div>
-          <label htmlFor="password">
-            Password <span className="text-error">*</span>
+        <div className="mb-4">
+          <label htmlFor="password" className="relative font-medium">
+            Password <span className="text-error font-normal">*</span>
             {passwordInputHasError && (
               <p className="inline text-error text-xs">
                 Password must be at least 7 characters long!
               </p>
             )}
             <input
-              className="input-box"
+              className="input-box relative font-normal"
               type={view ? 'text' : 'password'}
               id="password"
               value={enteredPassword}
@@ -96,20 +96,36 @@ function SignInForm() {
               onBlur={passwordBlurHandler}
               required
             />
-            <img src={password} alt="" onClick={viewPasswordHandler} />
+            <img
+              src={password}
+              alt=""
+              onClick={viewPasswordHandler}
+              className="absolute right-3.5 top-9"
+            />
           </label>
         </div>
-        <div>
-          <label htmlFor="">
-            <input type="checkbox" onChange={checkedChangeHandler} required />
-            <p>
-              I agree to the processing of my personal data (name and email) for
-              the purpose of conducting the assessment. Read{' '}
-              <Link to="/">Privacy Policy</Link> to know more.
-            </p>
-          </label>
-        </div>
-        <Link to={formIsValid ? '/home' : '/'}>Sign In</Link>
+        <label className="flex gap-2 items-start mb-8">
+          <input
+            type="checkbox"
+            onChange={checkedChangeHandler}
+            required
+            className="mt-1"
+          />
+          <p>
+            I agree to the processing of my personal data (name and email) for
+            the purpose of conducting the assessment. Read{' '}
+            <Link to="/" className="text-primary-300">
+              Privacy Policy
+            </Link>{' '}
+            to know more.
+          </p>
+        </label>
+        <Link
+          to={formIsValid ? '/home' : '/'}
+          className="link text-white bg-primary-300"
+        >
+          Sign In
+        </Link>
       </form>
     </div>
   );
