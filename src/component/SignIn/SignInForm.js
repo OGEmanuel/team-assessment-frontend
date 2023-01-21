@@ -121,7 +121,7 @@ function SignInForm() {
           </p>
         </label>
         <Link
-          to={formIsValid ? '/home' : '/'}
+          to={formIsValid ? 'dashboard' : '/'}
           className="link text-white bg-primary-300"
         >
           Sign In
