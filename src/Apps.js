@@ -1,19 +1,19 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import AssessmentInstructionsPage from './page/Assessment/AssessmentInstructions';
-import AssessmentQuizPage from './page/Assessment/AssessmentQuiz';
-import AssessmentSubmissionPage from './page/Assessment/AssessmentSubmission';
 import DashboardPage from './page/Dashboard';
 import ErrorPage from './page/Error';
 import NotificationPage from './page/Notification';
 import ProfilePage from './page/Profile';
-import AssessmentRootLayout from './page/Assessment/AssessmentRoot';
 import ScorePage from './page/Score';
-import SignInPage from './page/SignIn';
+import AuthenticationPage from './page/Authentication';
+import AssessmentInstructions from './component/Home/Assessment/AssessmentInstructions';
+import AssessmentQuiz from './component/Home/Assessment/AssessmentQuiz';
+import AssessmentSubmission from './component/Home/Assessment/AssessmentSubmission';
+import AssessmentRootLayout from './page/AssessmentRoot';
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <SignInPage />,
+    element: <AuthenticationPage />,
     errorElement: <ErrorPage />,
   },
   { path: 'dashboard', element: <DashboardPage /> },
@@ -21,11 +21,11 @@ const router = createBrowserRouter([
     path: 'assessment',
     element: <AssessmentRootLayout />,
     children: [
-      { index: true, element: <AssessmentInstructionsPage /> },
-      { path: 'quiz', element: <AssessmentQuizPage /> },
+      { index: true, element: <AssessmentInstructions /> },
+      { path: 'quiz', element: <AssessmentQuiz /> },
       {
         path: 'quiz/submission',
-        element: <AssessmentSubmissionPage />,
+        element: <AssessmentSubmission />,
       },
     ],
   },

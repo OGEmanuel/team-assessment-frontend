@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
-import Modal from '../../../components/UI/Modal';
-import logo from '../../../assets/logo.png';
-import search from '../../../assets/Search.svg';
-import menu from '../../../assets/menu.svg';
+import Modal from '../../components/UI/Modal';
+import logo from '../../assets/logo.png';
+import search from '../../assets/Search.svg';
+import menu from '../../assets/menu.svg';
 import { Link } from 'react-router-dom';
 
 const MainNav = () => {

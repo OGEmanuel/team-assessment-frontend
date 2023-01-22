@@ -9,7 +9,7 @@ import password from '../../assets/password.svg';
 const isNotEmpty = value => value.trim() !== '';
 const validPassword = value => value.trim().length > 6;
 
-function SignInForm() {
+function AuthForm() {
   const [view, setView] = useState(false);
   const [checked, setChecked] = useState(false);
 
@@ -131,4 +131,4 @@ function SignInForm() {
   );
 }
 
-export default SignInForm;
+export default AuthForm;

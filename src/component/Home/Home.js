@@ -1,15 +1,12 @@
-import { Outlet } from 'react-router-dom';
-import MainContent from './MainContent/MainContent';
-import SideNav from './Nav/SideNav';
+import MainNav from '../Nav/MainNav';
+import MainContent from './MainContent';
 
 const Home = () => {
   return (
-    <section className="flex font-style">
-      <SideNav />
-      <MainContent>
-        <Outlet />
-      </MainContent>
-    </section>
+    <>
+      <MainNav />
+      <MainContent />
+    </>
   );
 };
 

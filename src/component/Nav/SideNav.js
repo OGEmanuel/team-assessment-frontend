@@ -1,40 +1,40 @@
 import { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 
-import AuthContext from '../../../store/notify-context';
+import AuthContext from '../../store/notify-context';
 
-import Dashboard from '../../../assets/dashboard.svg';
-import DashboardColor from '../../../assets/dashboardColor.svg';
+import Dashboard from '../../assets/dashboard.svg';
+import DashboardColor from '../../assets/dashboardColor.svg';
 
-import Assessments from '../../../assets/assessments.svg';
-import AssessmentsColor from '../../../assets/assessmentsColor.svg';
+import Assessments from '../../assets/assessments.svg';
+import AssessmentsColor from '../../assets/assessmentsColor.svg';
 
-import Notifications from '../../../assets/notification.svg';
-import NotificationsColor from '../../../assets/notificationColor.svg';
+import Notifications from '../../assets/notification.svg';
+import NotificationsColor from '../../assets/notificationColor.svg';
 
-import logout from '../../../assets/logout.svg';
+import logout from '../../assets/logout.svg';
 
 const SIDE_BAR = [
   {
     id: 1,
     icon: Dashboard,
     iconColor: DashboardColor,
-    label: 'dashboard',
-    link: '/dashboard',
+    label: 'Dashboard',
+    link: '',
   },
   {
     id: 2,
     icon: Assessments,
     iconColor: AssessmentsColor,
-    label: 'assessments',
-    link: '/assessment',
+    label: 'Assessments',
+    link: 'assessment',
   },
   {
     id: 3,
     icon: Notifications,
     iconColor: NotificationsColor,
-    label: 'notifications',
-    link: '/notification',
+    label: 'Notifications',
+    link: 'notification',
   },
 ];
 
@@ -51,7 +51,7 @@ const SideNav = () => {
   };
 
   return (
-    <nav className="font-style">
+    <nav>
       <div>
         {SIDE_BAR.map(list => (
           <NavLink to={`${list.link}`} key={list.id} style={navLinkStyles}>

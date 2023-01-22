@@ -1,7 +1,5 @@
-import Notification from '../component/Home/MainContent/Notification';
-
 const NotificationPage = () => {
-  return <Notification />;
+  return <h1>Notification</h1>;
 };
 
 export default NotificationPage;

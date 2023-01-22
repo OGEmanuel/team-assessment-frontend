@@ -2,7 +2,7 @@ import chrome from '../../assets/chrome.png';
 import firefox from '../../assets/firefox.png';
 import explorer from '../../assets/explorer.png';
 
-const SignInMessage = () => {
+const AuthMessage = () => {
   return (
     <div className="bg-primary-400 text-white pt-48 pl-20">
       <div className="mb-10">
@@ -34,4 +34,4 @@ const SignInMessage = () => {
   );
 };
 
-export default SignInMessage;
+export default AuthMessage;
