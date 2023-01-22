@@ -17,28 +17,32 @@ const MainNav = () => {
   };
 
   return (
-    <nav className="font-style">
-      <img src={logo} alt="logo" />
-      <div>
-        <input type="search" placeholder="Search something" />
+    <nav className="font-style flex bg-nav-100 border-b border-nav-300 py-2.5 px-5 gap-52 items-center">
+      <img src={logo} alt="logo" className="w-logo" />
+      <div className="flex">
+        <input
+          type="search"
+          placeholder="Search something"
+          className="bg-nav-200 w-search py-3 px-5 border border-nav-300 rounded-lg outline-0"
+        />
         <img src={search} alt="" />
-      </div>
-      <div onClick={handleClick}>
-        <button>
-          <p>NC</p>
-          <img src={menu} alt="" />
-          {dropdown && <Modal onClose={handleClose} />}
-          {dropdown && (
-            <ul>
-              <li>
-                <Link to="/profile">My Profile</Link>
-              </li>
-              <li>
-                <Link>Settings</Link>
-              </li>
-            </ul>
-          )}
-        </button>
+        <div onClick={handleClick}>
+          <button>
+            <p>NC</p>
+            <img src={menu} alt="" />
+            {dropdown && <Modal onClose={handleClose} />}
+            {dropdown && (
+              <ul>
+                <li>
+                  <Link to="/profile">My Profile</Link>
+                </li>
+                <li>
+                  <Link>Settings</Link>
+                </li>
+              </ul>
+            )}
+          </button>
+        </div>
       </div>
     </nav>
   );

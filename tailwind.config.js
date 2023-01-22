@@ -42,6 +42,11 @@ module.exports = {
       rose: colors.rose,
       click: '#50CEB3',
       error: '#E93C3C',
+      nav: {
+        100: '#FBFBFB',
+        200: '#F4F4F4',
+        300: '#E9E9E9',
+      },
       primary: {
         100: '#E7FFFA',
         200: '#05B993',
@@ -957,6 +962,8 @@ module.exports = {
       '10/12': '83.333333%',
       '11/12': '91.666667%',
       full: '100%',
+      logo: '184px',
+      search: '563px',
       screen: '100vw',
       min: 'min-content',
       max: 'max-content',
