@@ -4,7 +4,7 @@ const MainContent = props => {
   return (
     <section className="flex font-style">
       <SideNav />
-      <main>{props.children}</main>
+      <main className="w-[77%]">{props.children}</main>
     </section>
   );
 };

@@ -23,6 +23,26 @@
   @apply font-medium text-xl mb-2;
 }
 
+.dropdown {
+  @apply absolute top-12 right-0 bg-white shadow-md w-[129px] text-left pt-4 pb-2 pl-4 text-lg rounded-lg animate-slideIn;
+}
+
+.dashboard {
+  @apply flex pl-4 gap-2  py-4;
+}
+
+.active-link {
+  @apply dashboard mb-4 border-l-4 bg-primary-100 border-primary-300 font-medium text-primary-300;
+}
+
+.inactive-link {
+  @apply dashboard mb-4 border-l-4 border-transparent text-text-200;
+}
+
+.active-timetable {
+  @apply w-40 mr-6 font-medium text-white text-center py-4 rounded-lg;
+}
+
 /* * {
   margin: 0;
   padding: 0;

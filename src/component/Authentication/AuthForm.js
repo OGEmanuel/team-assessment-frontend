@@ -6,7 +6,7 @@ import logo from '../../assets/logo.png';
 import google from '../../assets/google-icon.png';
 import password from '../../assets/password.svg';
 
-const isNotEmpty = value => value.trim() !== '';
+const validEmail = value => value.includes('@');
 const validPassword = value => value.trim().length > 6;
 
 function AuthForm() {
@@ -14,12 +14,12 @@ function AuthForm() {
   const [checked, setChecked] = useState(false);
 
   const {
-    value: enteredName,
-    isValid: enteredNameIsValid,
-    hasError: nameInputHasError,
-    valueChangeHandler: nameChangeHandler,
-    inputBlurHandler: nameBlurHandler,
-  } = useInput(isNotEmpty);
+    value: enteredEmail,
+    isValid: enteredEmailIsValid,
+    hasError: emailInputHasError,
+    valueChangeHandler: emailChangeHandler,
+    inputBlurHandler: emailBlurHandler,
+  } = useInput(validEmail);
 
   const {
     value: enteredPassword,
@@ -37,7 +37,7 @@ function AuthForm() {
 
   let formIsValid = false;
 
-  if (enteredNameIsValid && enteredPasswordIsValid && checkedIsValid) {
+  if (enteredEmailIsValid && enteredPasswordIsValid && checkedIsValid) {
     formIsValid = true;
   }
 
@@ -63,18 +63,18 @@ function AuthForm() {
       <form>
         <div className="mb-4">
           <label htmlFor="name" className="font-medium">
-            Full Name <span className="text-error font-normal">*</span>
-            {nameInputHasError && (
-              <p className="inline text-error text-xs">Name cannot be blank</p>
+            Email <span className="text-error font-normal">*</span>
+            {emailInputHasError && (
+              <p className="inline text-error text-xs">Enter Valid Email</p>
             )}
             <input
               className="input-box placeholder-text-200 placeholder:font-normal font-normal"
-              type="text"
+              type="email"
               id="name"
-              value={enteredName}
-              onChange={nameChangeHandler}
-              onBlur={nameBlurHandler}
-              placeholder="e.g Chukwuma Adekunle Ciroma"
+              value={enteredEmail}
+              onChange={emailChangeHandler}
+              onBlur={emailBlurHandler}
+              placeholder="example@gmail.com"
               required
             />
           </label>

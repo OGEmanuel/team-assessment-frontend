@@ -42,6 +42,7 @@ module.exports = {
       rose: colors.rose,
       click: '#50CEB3',
       error: '#E93C3C',
+      inactive: '#B4EADF',
       nav: {
         100: '#FBFBFB',
         200: '#F4F4F4',
@@ -56,6 +57,7 @@ module.exports = {
       profile: '#D9D9D9',
       secondary: '#3C2E9E',
       shade: '#C4C4C4',
+      timetable: '#838383',
       text: {
         100: '#D3D1D1',
         200: '#A49E9E',

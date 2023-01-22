@@ -27,36 +27,27 @@ const SIDE_BAR = [
     icon: Assessments,
     iconColor: AssessmentsColor,
     label: 'Assessments',
-    link: 'assessment',
+    link: '/assessment',
   },
   {
     id: 3,
     icon: Notifications,
     iconColor: NotificationsColor,
     label: 'Notifications',
-    link: 'notification',
+    link: '/notification',
   },
 ];
 
 const SideNav = () => {
   const ctx = useContext(AuthContext);
 
-  const navLinkStyles = ({ isActive }) => {
-    return {
-      backgroundColor: isActive ? '#e7fffa' : '',
-      borderLeft: isActive
-        ? '0.4rem solid #0a9c7d'
-        : '0.4rem solid transparent',
-    };
-  };
-
   return (
-    <nav>
-      <div>
+    <nav className="flex flex-col justify-between w-[267px] bg-nav-100 border-r border-nav-300">
+      <div className="pt-8">
         {SIDE_BAR.map(list => (
-          <NavLink to={`${list.link}`} key={list.id} style={navLinkStyles}>
+          <NavLink to={`${list.link}`} key={list.id}>
             {({ isActive }) => (
-              <div>
+              <div className={isActive ? 'active-link' : 'inactive-link'}>
                 <img src={isActive ? list.iconColor : list.icon} alt="" />
                 <p>
                   {list.label}
@@ -73,9 +64,9 @@ const SideNav = () => {
       </div>
 
       <div>
-        <Link to="/">
+        <Link to="/" className="dashboard items-center mb-44">
           <img src={logout} alt="" />
-          <p>Log out</p>
+          <p className="text-sm text-error">Log out</p>
         </Link>
       </div>
     </nav>
