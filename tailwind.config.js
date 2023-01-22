@@ -53,6 +53,7 @@ module.exports = {
         300: '#0A9C7D',
         400: '#08342B',
       },
+      profile: '#D9D9D9',
       secondary: '#3C2E9E',
       shade: '#C4C4C4',
       text: {
@@ -133,6 +134,7 @@ module.exports = {
       ping: 'ping 1s cubic-bezier(0, 0, 0.2, 1) infinite',
       pulse: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
       bounce: 'bounce 1s infinite',
+      slideIn: 'slideIn 300ms ease-in',
     },
     aria: {
       checked: 'checked="true"',
@@ -624,6 +626,17 @@ module.exports = {
         '50%': {
           transform: 'none',
           animationTimingFunction: 'cubic-bezier(0,0,0.2,1)',
+        },
+      },
+      slideIn: {
+        '0%': {
+          top: '1rem',
+          opacity: '0',
+        },
+
+        '100%': {
+          top: '3rem',
+          opacity: '1',
         },
       },
     },

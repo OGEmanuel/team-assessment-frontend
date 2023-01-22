@@ -100,7 +100,7 @@ function AuthForm() {
               src={password}
               alt=""
               onClick={viewPasswordHandler}
-              className="absolute right-3.5 top-9"
+              className="absolute right-3.5 top-[55%]"
             />
           </label>
         </div>
