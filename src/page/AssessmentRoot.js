@@ -1,5 +1,7 @@
+import AssessmentContent from '../component/Home/Assessment/AssessmentContent';
+
 const AssessmentRootLayout = () => {
-  return <h1>Assessments</h1>;
+  return <AssessmentContent />;
 };
 
 export default AssessmentRootLayout;

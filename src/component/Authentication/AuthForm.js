@@ -46,22 +46,22 @@ function AuthForm() {
   };
 
   return (
-    <div className="px-12 py-8">
-      <img src={logo} alt="logo" className="mb-16" />
+    <div className="px-14 py-9">
+      <img src={logo} alt="logo" className="mb-20" />
       <Link
         to="/"
-        className="link border border-primary-200 text-primary-200 gap-2 mb-14"
+        className="button-lg border border-primary-200 text-primary-200 gap-2 mb-24"
       >
         <img src={google} alt="google" className="w-6" />
         Sign in with Google
       </Link>
-      <div className="flex gap-5 flex-1 text-text-300 text-lg mb-8">
+      <div className="flex gap-5 flex-1 text-text-300 text-lg mb-16">
         <hr className="hr-line" />
         OR
         <hr className="hr-line" />
       </div>
       <form>
-        <div className="mb-4">
+        <div className="mb-6">
           <label htmlFor="name" className="font-medium">
             Email <span className="text-error font-normal">*</span>
             {emailInputHasError && (
@@ -79,7 +79,7 @@ function AuthForm() {
             />
           </label>
         </div>
-        <div className="mb-4">
+        <div className="mb-7">
           <label htmlFor="password" className="relative font-medium">
             Password <span className="text-error font-normal">*</span>
             {passwordInputHasError && (
@@ -104,7 +104,7 @@ function AuthForm() {
             />
           </label>
         </div>
-        <label className="flex gap-2 items-start mb-8">
+        <label className="flex gap-2.5 items-start mb-10">
           <input
             type="checkbox"
             onChange={checkedChangeHandler}
@@ -122,7 +122,7 @@ function AuthForm() {
         </label>
         <Link
           to={formIsValid ? 'dashboard' : '/'}
-          className="link text-white bg-primary-300"
+          className="button-lg__primary"
         >
           Sign In
         </Link>

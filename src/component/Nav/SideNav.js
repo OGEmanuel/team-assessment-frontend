@@ -20,7 +20,7 @@ const SIDE_BAR = [
     icon: Dashboard,
     iconColor: DashboardColor,
     label: 'Dashboard',
-    link: '',
+    link: '/dashboard',
   },
   {
     id: 2,
@@ -42,12 +42,14 @@ const SideNav = () => {
   const ctx = useContext(AuthContext);
 
   return (
-    <nav className="flex flex-col justify-between w-[267px] bg-nav-100 border-r border-nav-300">
+    <nav className="flex flex-col justify-between w-[16.7rem] bg-nav-100 border-r border-nav-300">
       <div className="pt-8">
         {SIDE_BAR.map(list => (
-          <NavLink to={`${list.link}`} key={list.id}>
+          <NavLink to={`${list.link}`} key={list.id} end>
             {({ isActive }) => (
-              <div className={isActive ? 'active-link' : 'inactive-link'}>
+              <div
+                className={isActive ? 'navlink__active' : 'navlink__inactive'}
+              >
                 <img src={isActive ? list.iconColor : list.icon} alt="" />
                 <p>
                   {list.label}
@@ -64,7 +66,7 @@ const SideNav = () => {
       </div>
 
       <div>
-        <Link to="/" className="dashboard items-center mb-44">
+        <Link to="/" className="flex pl-4 gap-2 items-center mb-44">
           <img src={logout} alt="" />
           <p className="text-sm text-error">Log out</p>
         </Link>

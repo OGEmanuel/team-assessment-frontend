@@ -1,23 +1,15 @@
-import { useNavigate } from 'react-router-dom';
-
-import classes from './Back.module.css';
+import { Link } from 'react-router-dom';
 
 import back from '../../assets/back.svg';
 
 const Back = () => {
-  const navigate = useNavigate();
-
-  const clickHandler = () => {
-    navigate(-1);
-  };
-
   return (
-    <div className={classes.back}>
-      <button onClick={clickHandler}>
-        <img src={back} alt="" />
+    <>
+      <Link to="" className="flex gap-3 items-center">
+        <img src={back} alt="" className="w-4" />
         <p>Back</p>
-      </button>
-    </div>
+      </Link>
+    </>
   );
 };
 

@@ -39,12 +39,16 @@ const Timetable = () => {
           <p className="w-[17%] font-medium text-2xl">{list.type}</p>
           <p className="w-1/3 text-2xl text-text-300">{list.date}</p>
           <Link
-            to={list.type === 'General' ? '' : ''}
+            to={
+              list.type === 'General' && list.style === 'active'
+                ? '/assessment'
+                : ''
+            }
             onClick={() => handleClickToAssessments(list.type)}
             className={
               list.style === 'active'
-                ? 'active-timetable bg-primary-300'
-                : 'active-timetable bg-inactive'
+                ? 'button-sm bg-primary-300 button-active'
+                : 'button-sm bg-inactive'
             }
           >
             Attempt
