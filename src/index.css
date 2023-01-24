@@ -8,11 +8,11 @@
 }
 
 .button-active {
-  @apply hover:bg-gradient-to-r from-primary-200 to-secondary hover:text-white font-medium;
+  @apply hover:bg-gradient-to-r transition from-primary-200 to-secondary hover:text-white font-medium;
 }
 
 .button-lg {
-  @apply flex rounded-lg py-4 justify-center button-active;
+  @apply flex rounded-lg py-2.5 justify-center button-active;
 }
 
 .button-lg__primary {
@@ -24,7 +24,7 @@
 }
 
 .input-box {
-  @apply block border border-text-100 rounded-lg w-full outline-none py-3.5 pl-2 pr-24 mt-2;
+  @apply block border border-text-100 rounded-lg w-full outline-none py-2.5 pl-2 pr-24 mt-px;
 }
 
 .h2 {
@@ -36,7 +36,7 @@
 }
 
 .nav {
-  @apply flex pl-4 gap-2 py-4 mb-4 border-l-4;
+  @apply flex pl-4 py-4 mb-4 border-l-4;
 }
 
 .navlink__active {
@@ -48,7 +48,7 @@
 }
 
 .button-sm {
-  @apply w-40 mr-6 font-medium text-white text-center py-4 rounded-lg;
+  @apply w-40 mr-6 font-medium text-white text-center py-2.5 rounded-lg;
 }
 
 /* * {

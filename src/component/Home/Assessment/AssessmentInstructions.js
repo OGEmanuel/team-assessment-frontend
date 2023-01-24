@@ -3,14 +3,14 @@ import Back from '../../../components/UI/Back';
 
 const AssessmentInstructions = () => {
   return (
-    <div className="mt-[2.7rem] ml-6">
-      <div className="flex gap-[16.5rem] mb-[3.8rem]">
+    <div className="mt-[1.8rem] ml-6">
+      <div className="flex gap-[16.5rem] mb-[1.7rem]">
         <Back />
-        <h1 className="font-medium text-[2rem]">General Assessment</h1>
+        <h1 className="font-medium text-[1.5rem]">General Assessment</h1>
       </div>
-      <div className="">
-        <h2 className="text-center text-2xl font-medium mb-6">INSTRUCTIONS</h2>
-        <div className="text-justify ">
+      <div className="mb-10">
+        <h2 className="text-center text-xl font-medium mb-4">INSTRUCTIONS</h2>
+        <div className="text-justify text-sm">
           <p>
             Lorem ipsum dolor sit amet consectetur. Tortor pellentesque lorem
             sit lectus phasellus neque sit. Ultricies hendrerit vitae nibh
@@ -51,7 +51,10 @@ const AssessmentInstructions = () => {
         </div>
       </div>
       <div>
-        <Link to="">
+        <Link
+          to="quiz"
+          className="button-lg__primary w-2/3 mb-[7.5rem] my-0 mx-auto"
+        >
           <p>Start Assessment</p>
         </Link>
       </div>

@@ -6,7 +6,7 @@ import ProfilePage from './page/Profile';
 import ScorePage from './page/Score';
 import AuthenticationPage from './page/Authentication';
 import AssessmentInstructions from './component/Home/Assessment/AssessmentInstructions';
-import AssessmentQuiz from './component/Home/Assessment/AssessmentQuiz';
+import AssessmentQuiz from './component/Home/Assessment/Quiz/AssessmentQuiz';
 import AssessmentSubmission from './component/Home/Assessment/AssessmentSubmission';
 import AssessmentRootLayout from './page/AssessmentRoot';
 
@@ -33,6 +33,28 @@ const router = createBrowserRouter([
   { path: 'profile', element: <ProfilePage /> },
   { path: 'score', element: <ScorePage /> },
 ]);
+
+// const router = createBrowserRouter([
+//   {
+//     path: '/',
+//     element: <AuthenticationPage />,
+//     errorElement: <ErrorPage />,
+//   },
+//   { path: 'dashboard', element: <DashboardPage /> },
+//   {
+//     path: 'assessment',
+//     element: <AssessmentInstructions />,
+//   },
+//   { path: '/assessment/quiz', element: <AssessmentQuiz /> },
+//   {
+//     path: '/assessment/quiz/submission',
+//     element: <AssessmentSubmission />,
+//   },
+
+//   { path: 'notification', element: <NotificationPage /> },
+//   { path: 'profile', element: <ProfilePage /> },
+//   { path: 'score', element: <ScorePage /> },
+// ]);
 
 function Apps() {
   return <RouterProvider router={router} />;

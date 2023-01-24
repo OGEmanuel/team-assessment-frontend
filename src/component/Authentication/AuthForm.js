@@ -46,22 +46,22 @@ function AuthForm() {
   };
 
   return (
-    <div className="px-14 py-9">
-      <img src={logo} alt="logo" className="mb-20" />
+    <div className="px-10 py-6">
+      <img src={logo} alt="logo" className="mb-12" />
       <Link
         to="/"
-        className="button-lg border border-primary-200 text-primary-200 gap-2 mb-24"
+        className="button-lg border border-primary-200 text-primary-200 gap-2 mb-16"
       >
         <img src={google} alt="google" className="w-6" />
         Sign in with Google
       </Link>
-      <div className="flex gap-5 flex-1 text-text-300 text-lg mb-16">
+      <div className="flex gap-5 flex-1 text-text-300 text-lg mb-12">
         <hr className="hr-line" />
         OR
         <hr className="hr-line" />
       </div>
       <form>
-        <div className="mb-6">
+        <div className="mb-4">
           <label htmlFor="name" className="font-medium">
             Email <span className="text-error font-normal">*</span>
             {emailInputHasError && (
@@ -79,7 +79,7 @@ function AuthForm() {
             />
           </label>
         </div>
-        <div className="mb-7">
+        <div className="mb-5">
           <label htmlFor="password" className="relative font-medium">
             Password <span className="text-error font-normal">*</span>
             {passwordInputHasError && (
@@ -104,7 +104,7 @@ function AuthForm() {
             />
           </label>
         </div>
-        <label className="flex gap-2.5 items-start mb-10">
+        <label className="flex gap-2.5 items-start mb-5">
           <input
             type="checkbox"
             onChange={checkedChangeHandler}

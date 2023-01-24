@@ -4,7 +4,7 @@ import explorer from '../../assets/explorer.png';
 
 const AuthMessage = () => {
   return (
-    <div className="bg-primary-400 text-white pt-60 pl-20">
+    <div className="bg-primary-400 text-white pt-28 pl-20">
       <div className="mb-16">
         <h1 className="font-medium text-3xl w-3/4 mb-2">
           Give your best shot while answering the questions
