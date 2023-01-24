@@ -9,30 +9,7 @@ import AssessmentInstructions from './component/Home/Assessment/AssessmentInstru
 import AssessmentQuiz from './component/Home/Assessment/Quiz/AssessmentQuiz';
 import AssessmentSubmission from './component/Home/Assessment/AssessmentSubmission';
 import AssessmentRootLayout from './page/AssessmentRoot';
-
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <AuthenticationPage />,
-    errorElement: <ErrorPage />,
-  },
-  { path: 'dashboard', element: <DashboardPage /> },
-  {
-    path: 'assessment',
-    element: <AssessmentRootLayout />,
-    children: [
-      { index: true, element: <AssessmentInstructions /> },
-      { path: 'quiz', element: <AssessmentQuiz /> },
-      {
-        path: 'quiz/submission',
-        element: <AssessmentSubmission />,
-      },
-    ],
-  },
-  { path: 'notification', element: <NotificationPage /> },
-  { path: 'profile', element: <ProfilePage /> },
-  { path: 'score', element: <ScorePage /> },
-]);
+import RootLayout from './page/RootLayout';
 
 // const router = createBrowserRouter([
 //   {
@@ -43,18 +20,50 @@ const router = createBrowserRouter([
 //   { path: 'dashboard', element: <DashboardPage /> },
 //   {
 //     path: 'assessment',
-//     element: <AssessmentInstructions />,
+//     element: <AssessmentRootLayout />,
+//     children: [
+//       { index: true, element: <AssessmentInstructions /> },
+//       { path: 'quiz', element: <AssessmentQuiz /> },
+//       {
+//         path: 'quiz/submission',
+//         element: <AssessmentSubmission />,
+//       },
+//     ],
 //   },
-//   { path: '/assessment/quiz', element: <AssessmentQuiz /> },
-//   {
-//     path: '/assessment/quiz/submission',
-//     element: <AssessmentSubmission />,
-//   },
-
 //   { path: 'notification', element: <NotificationPage /> },
 //   { path: 'profile', element: <ProfilePage /> },
 //   { path: 'score', element: <ScorePage /> },
 // ]);
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <AuthenticationPage />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: '',
+    element: <RootLayout />,
+    children: [
+      { index: true, path: 'dashboard', element: <DashboardPage /> },
+      {
+        path: 'assessment',
+        element: <AssessmentRootLayout />,
+        children: [
+          { index: true, element: <AssessmentInstructions /> },
+          { path: 'quiz', element: <AssessmentQuiz /> },
+          {
+            path: 'quiz/submission',
+            element: <AssessmentSubmission />,
+          },
+        ],
+      },
+      { path: 'notification', element: <NotificationPage /> },
+      { path: 'profile', element: <ProfilePage /> },
+      { path: 'score', element: <ScorePage /> },
+    ],
+  },
+]);
 
 function Apps() {
   return <RouterProvider router={router} />;

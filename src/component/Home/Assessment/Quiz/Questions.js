@@ -1,7 +1,5 @@
 import { useNavigate } from 'react-router-dom';
 
-import classes from './Questions.module.css';
-
 const Questions = props => {
   const questions = props.questions;
   const navigate = useNavigate();
@@ -16,7 +14,7 @@ const Questions = props => {
   };
 
   return (
-    <div className={classes.questions}>
+    <div>
       <ol>
         {questions.map(que => (
           <li key={que.id}>
@@ -68,12 +66,8 @@ const Questions = props => {
           </li>
         ))}
       </ol>
-      <div className={classes['page-nav']}>
-        <button
-          className={classes[props.curPage !== 1 ? 'active' : '']}
-          disabled={props.curPage === 1}
-          onClick={prevPageHandler}
-        >
+      <div>
+        <button disabled={props.curPage === 1} onClick={prevPageHandler}>
           Previous
         </button>
         <button onClick={nextPageHandler}>

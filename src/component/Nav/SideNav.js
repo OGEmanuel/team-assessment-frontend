@@ -42,7 +42,7 @@ const SideNav = () => {
   const ctx = useContext(AuthContext);
 
   return (
-    <nav className="w-[16.7rem] bg-nav-100 border-r border-nav-300">
+    <nav className="w-[20%] bg-nav-100 border-r border-nav-300">
       <div className="pt-8 mb-[15.7rem]">
         {SIDE_BAR.map(list => (
           <NavLink

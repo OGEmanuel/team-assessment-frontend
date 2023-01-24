@@ -3,8 +3,10 @@
 @tailwind components;
 @tailwind utilities;
 
-.font-style {
-  @apply text-text-400 font-body;
+body {
+  overflow-x: hidden;
+  font-family: 'Rubik', sans-serif;
+  color: #333333;
 }
 
 .button-active {
@@ -49,6 +51,10 @@
 
 .button-sm {
   @apply w-40 mr-6 font-medium text-white text-center py-2.5 rounded-lg;
+}
+
+.page {
+  @apply w-[2.3rem] font-medium py-2 text-white rounded;
 }
 
 /* * {

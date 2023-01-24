@@ -20,7 +20,7 @@ const Timer = () => {
   }, [seconds, minutes]);
 
   return (
-    <div className="flex justify-center pt-2 gap-[1.2rem] mb-4">
+    <div className="flex justify-center pt-2 gap-[1.2rem] mb-2">
       <img src={clock} alt="" className="w-[1.6rem]" />
       <p className="text-4xl font-medium">
         TIMER:{minutes < 10 ? '0' + minutes : minutes}:

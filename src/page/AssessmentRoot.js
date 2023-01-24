@@ -1,7 +1,7 @@
-import AssessmentContent from '../component/Home/Assessment/AssessmentContent';
+import { Outlet } from 'react-router-dom';
 
 const AssessmentRootLayout = () => {
-  return <AssessmentContent />;
+  return <Outlet />;
 };
 
 export default AssessmentRootLayout;
