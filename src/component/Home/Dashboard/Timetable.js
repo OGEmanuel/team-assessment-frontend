@@ -47,8 +47,8 @@ const Timetable = () => {
             onClick={() => handleClickToAssessments(list.type)}
             className={
               list.style === 'active'
-                ? 'button-sm bg-primary-300 button-active'
-                : 'button-sm bg-inactive'
+                ? 'button-sm__active-pri'
+                : 'button-sm__disabled-pri'
             }
           >
             Attempt

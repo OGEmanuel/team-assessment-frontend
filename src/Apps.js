@@ -10,30 +10,7 @@ import AssessmentQuiz from './component/Home/Assessment/Quiz/AssessmentQuiz';
 import AssessmentSubmission from './component/Home/Assessment/AssessmentSubmission';
 import AssessmentRootLayout from './page/AssessmentRoot';
 import RootLayout from './page/RootLayout';
-
-// const router = createBrowserRouter([
-//   {
-//     path: '/',
-//     element: <AuthenticationPage />,
-//     errorElement: <ErrorPage />,
-//   },
-//   { path: 'dashboard', element: <DashboardPage /> },
-//   {
-//     path: 'assessment',
-//     element: <AssessmentRootLayout />,
-//     children: [
-//       { index: true, element: <AssessmentInstructions /> },
-//       { path: 'quiz', element: <AssessmentQuiz /> },
-//       {
-//         path: 'quiz/submission',
-//         element: <AssessmentSubmission />,
-//       },
-//     ],
-//   },
-//   { path: 'notification', element: <NotificationPage /> },
-//   { path: 'profile', element: <ProfilePage /> },
-//   { path: 'score', element: <ScorePage /> },
-// ]);
+import { loader as loadAssessmentQuiz } from './component/Home/Assessment/Quiz/QuizContent';
 
 const router = createBrowserRouter([
   {
@@ -44,6 +21,7 @@ const router = createBrowserRouter([
   {
     path: '',
     element: <RootLayout />,
+    errorElement: <ErrorPage />,
     children: [
       { index: true, path: 'dashboard', element: <DashboardPage /> },
       {
@@ -51,7 +29,11 @@ const router = createBrowserRouter([
         element: <AssessmentRootLayout />,
         children: [
           { index: true, element: <AssessmentInstructions /> },
-          { path: 'quiz', element: <AssessmentQuiz /> },
+          {
+            path: 'quiz',
+            element: <AssessmentQuiz />,
+            loader: loadAssessmentQuiz,
+          },
           {
             path: 'submission',
             element: <AssessmentSubmission />,

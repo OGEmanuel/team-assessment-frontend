@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+import { Form, useNavigate } from 'react-router-dom';
 
 const Questions = props => {
   const questions = props.questions;
@@ -14,22 +14,23 @@ const Questions = props => {
   };
 
   return (
-    <div>
-      <ol>
+    <Form className="ml-6 mt-6">
+      <ul>
         {questions.map(que => (
-          <li key={que.id}>
-            <p>
-              {que.number}. {que.question}
+          <li key={que.id} className="mb-3">
+            <p className="mb-1.5">
+              {que.id}. {que.question}
             </p>
-            <ul>
+            <ul className="pl-12">
               {que.options.map(opt => (
-                <span key={opt.id}>
+                <span key={opt.id} className="flex flex-col">
                   <label htmlFor={opt.a + opt.id}>
                     <input
                       type="radio"
                       id={opt.a + opt.id}
                       name={opt.id}
                       value={opt.a}
+                      className="mr-1.5"
                     />
                     <span> {opt.a}</span>
                   </label>
@@ -39,6 +40,7 @@ const Questions = props => {
                       id={opt.b + opt.id}
                       name={opt.id}
                       value={opt.b}
+                      className="mr-2.5"
                     />
                     <span>{opt.b}</span>
                   </label>
@@ -48,6 +50,7 @@ const Questions = props => {
                       id={opt.c + opt.id}
                       name={opt.id}
                       value={opt.c}
+                      className="mr-2.5"
                     />
                     <span>{opt.c}</span>
                   </label>
@@ -57,6 +60,7 @@ const Questions = props => {
                       id={opt.d + opt.id}
                       name={opt.id}
                       value={opt.d}
+                      className="mr-2.5"
                     />
                     <span>{opt.d}</span>
                   </label>
@@ -65,16 +69,28 @@ const Questions = props => {
             </ul>
           </li>
         ))}
-      </ol>
-      <div>
-        <button disabled={props.curPage === 1} onClick={prevPageHandler}>
+      </ul>
+      <div className="flex">
+        <button
+          disabled={props.curPage === 1}
+          onClick={prevPageHandler}
+          className={
+            props.curPage === 1
+              ? 'button-sm__disabled-pri'
+              : 'button-sm__active-sec'
+          }
+        >
           Previous
         </button>
-        <button onClick={nextPageHandler}>
+        <button
+          onClick={nextPageHandler}
+          className="button-sm__active-pri ml-auto"
+          type={props.curPage === props.numOfPages ? 'submit' : 'button'}
+        >
           {props.curPage === props.numOfPages ? 'Submit' : 'Next'}
         </button>
       </div>
-    </div>
+    </Form>
   );
 };
 
